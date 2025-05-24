@@ -92,16 +92,9 @@ fun ContactRow(contact: ContactDetails) {
                 text = contact.displayName ?: "No Name",
                 style = MaterialTheme.typography.titleMedium
             )
-            contact.phoneNumbers.forEach { phone ->
+            if (contact.phoneNumbers.isNotEmpty()) {
                 Text(
-                    text = "Phone number: $phone",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-            contact.emails.forEach { email ->
-                Text(
-                    text = "Email: $email",
+                    text = "Phone number: ${contact.phoneNumbers[0]}",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
